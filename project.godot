@@ -8,6 +8,10 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="Topdown Starter"
@@ -15,9 +19,9 @@ config/description="This 2D Pixelart, TopDown action Starter Project include all
 config/version="1.5"
 config/tags=PackedStringArray("starterkit")
 run/main_scene="res://Scenes/Levels/MainFloor.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
-boot_splash/image="res://Art/Icons/icon.png"
+config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/use_filter=false
+boot_splash/image="res://Art/Icons/icon.png"
 config/icon="res://Art/Icons/icon.png"
 
 [audio]
