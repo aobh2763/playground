@@ -4,11 +4,15 @@
 [ext_resource type="Script" uid="uid://bs84fyp7n1f58" path="res://Scenes/Levels/censorship.gd" id="1_srbmp"]
 [ext_resource type="TileSet" uid="uid://b3n0bklwwny1b" path="res://Art/TileMap.tres" id="2_7btwn"]
 [ext_resource type="Script" uid="uid://cdfpeioapbv6n" path="res://Scenes/Levels/enemy.gd" id="3_6uucl"]
+[ext_resource type="FontFile" uid="uid://ci60w53hdbiqe" path="res://Art/Fonts/m3x6.ttf" id="3_8vl1y"]
+[ext_resource type="Script" uid="uid://djeyrqj3himos" path="res://Scenes/Levels/time.gd" id="4_3wl1e"]
 [ext_resource type="Texture2D" uid="uid://e1qx1oeab31" path="res://Art/Icons/icon.svg" id="4_xfaf5"]
 [ext_resource type="Script" uid="uid://bnyc8j0x5v2q3" path="res://Scenes/Levels/target.gd" id="5_hlytw"]
 [ext_resource type="Texture2D" uid="uid://cbnjckflj8yhu" path="res://Art/Sprites/Target/target1.png" id="5_sem85"]
 [ext_resource type="Texture2D" uid="uid://bykxq74vgomt" path="res://Art/Sprites/Target/target2.png" id="6_hlytw"]
 [ext_resource type="Texture2D" uid="uid://ckg8nw1m0864g" path="res://Art/Sprites/Target/target3.png" id="7_srbmp"]
+[ext_resource type="PackedScene" uid="uid://cx4hoxn2lm2aa" path="res://Scenes/Obstacles/Spikes/Spikes.tscn" id="10_0amtr"]
+[ext_resource type="PackedScene" uid="uid://csg386ay7ldng" path="res://Scenes/Obstacles/Surveillance_Camera/Surveillance_Camera.tscn" id="13_bbeuo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0rowy"]
 size = Vector2(28, 28)
@@ -43,6 +47,19 @@ script = ExtResource("1_srbmp")
 [node name="Player" parent="." unique_id=563263833 instance=ExtResource("1_r2ia7")]
 z_index = 2
 position = Vector2(0, 72)
+
+[node name="Time" type="Label" parent="Player" unique_id=732500712]
+visible = false
+offset_left = -372.0
+offset_top = 186.0
+offset_right = -65.0
+offset_bottom = 222.0
+theme_override_fonts/font = ExtResource("3_8vl1y")
+theme_override_font_sizes/font_size = 45
+text = "Time : 999.99s"
+vertical_alignment = 2
+script = ExtResource("4_3wl1e")
+metadata/_edit_use_anchors_ = true
 
 [node name="DecoMap" type="TileMapLayer" parent="." unique_id=990948955]
 z_index = 1
@@ -182,6 +199,47 @@ frame_progress = 0.26860827
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Targets/Target4" unique_id=1711560233]
 shape = SubResource("RectangleShape2D_8vl1y")
+
+[node name="Obstacles" type="Node2D" parent="." unique_id=1843141911]
+
+[node name="Spike1" parent="Obstacles" unique_id=1972007108 instance=ExtResource("10_0amtr")]
+z_index = -1
+position = Vector2(-416, -203)
+on_duration = 2.0
+
+[node name="Spike2" parent="Obstacles" unique_id=1137379107 instance=ExtResource("10_0amtr")]
+z_index = -1
+position = Vector2(-320, -44)
+on_duration = 2.0
+
+[node name="Spike3" parent="Obstacles" unique_id=1756846261 instance=ExtResource("10_0amtr")]
+z_index = -1
+position = Vector2(-224, -204)
+on_duration = 2.0
+
+[node name="Spike4" parent="Obstacles" unique_id=81395495 instance=ExtResource("10_0amtr")]
+z_index = -1
+position = Vector2(320, -70)
+on_duration = 1000.0
+off_duration = 0.0
+
+[node name="Spike5" parent="Obstacles" unique_id=2019092188 instance=ExtResource("10_0amtr")]
+z_index = -1
+position = Vector2(320, -25)
+on_duration = 1000.0
+off_duration = 0.0
+
+[node name="Camera1" parent="Obstacles" unique_id=1821857730 instance=ExtResource("13_bbeuo")]
+position = Vector2(400, 208)
+rotation = 1.3456489
+start_angle = 180
+end_angle = 80
+direction = -1
+
+[node name="Camera2" parent="Obstacles" unique_id=861246321 instance=ExtResource("13_bbeuo")]
+position = Vector2(328, 545.00006)
+rotation = -1.5658815
+start_angle = -100
 
 [connection signal="body_entered" from="Enemies/Enemy1/Area2D" to="Enemies/Enemy1" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Enemies/Enemy2/Area2D" to="Enemies/Enemy2" method="_on_area_2d_body_entered"]

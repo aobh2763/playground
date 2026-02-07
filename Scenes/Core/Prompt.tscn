@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://d048fbb80fujh"]
+
+[ext_resource type="Script" uid="uid://dhufd55sd1ih3" path="res://Scenes/Core/prompt.gd" id="1_7hdso"]
+
+[node name="Prompt_layer" type="CanvasLayer" unique_id=2027810698]
+layer = 2
+
+[node name="GameUI" type="Control" parent="." unique_id=1866088234 node_paths=PackedStringArray("prompt_label") groups=["PromptUI"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7hdso")
+prompt_label = NodePath("Label")
+prompt_content = "Hello, <fill>!"
+options = Array[Array]([["World"]])
+
+[node name="Label" type="Label" parent="GameUI" unique_id=28532369]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 18.0
+offset_right = 639.0
+offset_bottom = 43.0
+horizontal_alignment = 1
+vertical_alignment = 1

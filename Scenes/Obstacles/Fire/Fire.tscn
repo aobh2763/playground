@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://cbecxpxb6rv3q"]
+
+[ext_resource type="Script" uid="uid://dd707gxaytf5k" path="res://Scenes/Interactables/spike.gd" id="1_wqaiy"]
+[ext_resource type="Texture2D" uid="uid://b0xs2ykkj72k7" path="res://Art/Sprites/spike_1.png" id="2_ecrbu"]
+[ext_resource type="Texture2D" uid="uid://b6pbcjcukyg1n" path="res://Art/Sprites/spike_2.png" id="3_e6xyb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5w7ky"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e8nlx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ecrbu")
+}],
+"loop": true,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ecrbu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_e6xyb")
+}],
+"loop": false,
+"name": &"on",
+"speed": 5.0
+}]
+
+[node name="Area2D" type="Area2D" unique_id=1972007108]
+script = ExtResource("1_wqaiy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1568372083]
+shape = SubResource("RectangleShape2D_5w7ky")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1367042570]
+position = Vector2(0, 0.5)
+scale = Vector2(0.2197802, 0.23076923)
+sprite_frames = SubResource("SpriteFrames_e8nlx")
+animation = &"on"
+
+[node name="Timer" type="Timer" parent="." unique_id=2009714739]
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

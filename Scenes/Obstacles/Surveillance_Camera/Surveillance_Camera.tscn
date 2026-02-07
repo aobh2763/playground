@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://csg386ay7ldng"]
+
+[ext_resource type="Script" uid="uid://dgey8878e75j5" path="res://Scenes/Obstacles/Surveillance_Camera/surveillance_camera.gd" id="1_1u7bc"]
+[ext_resource type="Texture2D" uid="uid://shrpv4pvryce" path="res://Art/Sprites/RedZone.png" id="2_1u7bc"]
+
+[node name="Area2D" type="Area2D" unique_id=1821857730]
+script = ExtResource("1_1u7bc")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=559657514]
+position = Vector2(-42, 36)
+scale = Vector2(11.077551, 4.484738)
+polygon = PackedVector2Array(3.878787, -8.186048, 8.214812, -1.7838278, 15.165807, 2.4527626, 18.957258, -1.7838278, 19.950258, -8.027225, 19.137804, -13.824665, 15.887987, -18.061256, 8.124539, -14.047643)
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1208744983]
+position = Vector2(-0.9999999, 1.7881393e-07)
+rotation = -0.3813434
+scale = Vector2(1.4272933, 1.4170754)
+skew = -0.80983275
+color = Color(1, 0.011764706, 0.011764706, 1)
+energy = 5.0
+shadow_enabled = true
+texture = ExtResource("2_1u7bc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

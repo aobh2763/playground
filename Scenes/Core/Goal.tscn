@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bqfkvsqibvo4k"]
+
+[ext_resource type="Script" uid="uid://c87vbu8c6ojni" path="res://Scenes/Interactables/goal.gd" id="1_urb3n"]
+[ext_resource type="Texture2D" uid="uid://bw36ig60cpuaq" path="res://Art/Sprites/Square.png" id="2_0hvei"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_op5m6"]
+
+[node name="Area2D" type="Area2D" unique_id=680187935]
+script = ExtResource("1_urb3n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1685605735]
+shape = SubResource("RectangleShape2D_op5m6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=442065491]
+position = Vector2(-3.3333333, -3.3333333)
+scale = Vector2(6.666667, 6.666667)
+texture = ExtResource("2_0hvei")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
