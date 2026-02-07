@@ -491,7 +491,6 @@ script = ExtResource("1_y5oq4")
 sprite = NodePath("AnimatedSprite2D")
 healthbar = NodePath("Camera2D/ProgressBar")
 health = 200
-flipped_horizontal = null
 hit_particles = NodePath("hit_particle_blood")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=1708800228]
