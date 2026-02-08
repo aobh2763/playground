@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://cqqr33d23t7h5"]
 
+[ext_resource type="Script" uid="uid://bs84fyp7n1f58" path="res://Scenes/Levels/censorship.gd" id="1_m5abb"]
 [ext_resource type="PackedScene" uid="uid://bvg5dny32iw0x" path="res://Scenes/Player/Player.tscn" id="1_owymg"]
 [ext_resource type="FontFile" uid="uid://ci60w53hdbiqe" path="res://Art/Fonts/m3x6.ttf" id="2_7e8vl"]
 [ext_resource type="Script" uid="uid://djeyrqj3himos" path="res://Scenes/Levels/time.gd" id="3_alvx7"]
@@ -15,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dxfyibmvpener" path="res://Scenes/Interactables/Target.tscn" id="13_ie6ou"]
 
 [node name="Censorship2" type="Node2D" unique_id=731664305]
+script = ExtResource("1_m5abb")
 
 [node name="Player" parent="." unique_id=624977723 instance=ExtResource("1_owymg")]
 z_index = 2
@@ -180,14 +182,18 @@ speed = 0.0
 
 [node name="Target1" parent="Target" unique_id=2074069215 instance=ExtResource("13_ie6ou")]
 position = Vector2(848.00006, 80)
+next_scene = "res://Scenes/Levels/Censorship3.tscn"
 option_idx = 3
 
 [node name="Target2" parent="Target" unique_id=317081558 instance=ExtResource("13_ie6ou")]
 position = Vector2(688, -464)
+next_scene = "res://Scenes/Levels/Censorship3.tscn"
 option_idx = 2
 
 [node name="Target3" parent="Target" unique_id=1257759450 instance=ExtResource("13_ie6ou")]
 position = Vector2(464, 464)
+next_scene = "res://Scenes/Levels/Censorship3.tscn"
 
 [node name="Target4" parent="Target" unique_id=650842428 instance=ExtResource("13_ie6ou")]
 position = Vector2(-208, 656)
+next_scene = "res://Scenes/Levels/Censorship3.tscn"

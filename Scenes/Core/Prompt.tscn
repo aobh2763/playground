@@ -15,7 +15,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7hdso")
 prompt_label = NodePath("Label")
-prompt_content = "Communism <fill> freedom and <fill> innovation by centralizing economic control for <fill>."
 options = Array[Array]([["promotes", "reshapes", "restrics", "suppresses"], ["channels", "redirects", "stifles", "redefines"], ["equality", "solidarity", "stability", "dominance"]])
 
 [node name="Label" type="Label" parent="GameUI" unique_id=28532369]

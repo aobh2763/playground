@@ -3,7 +3,7 @@ class_name PlayerIdle
 
 @export var animator : AnimationPlayer
 
-var can_move = true
+var can_move = false
 
 func set_can_move(new_value):
 	can_move = new_value

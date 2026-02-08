@@ -6,8 +6,8 @@ extends Node2D
 
 @export var start_zoom: Vector2 = Vector2(0.2, 0.2)   # starting far
 @export var target_zoom: Vector2 = Vector2(0.8, 0.8)  # final zoom
-@export var zoom_duration: float = 0.0                # total zoom time in seconds
-@export var delay_before_zoom: float = 0.0           # delay before zoom starts
+@export var zoom_duration: float = 1.0                # total zoom time in seconds
+@export var delay_before_zoom: float = 1.0           # delay before zoom starts
 
 var elapsed_time: float = 0.0
 var zooming: bool = false

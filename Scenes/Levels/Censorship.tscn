@@ -71,17 +71,21 @@ speed = 0.0
 
 [node name="Target1" parent="Targets" unique_id=2074069215 instance=ExtResource("7_0amtr")]
 position = Vector2(-464, -80)
+next_scene = "res://Scenes/Levels/Censorship2.tscn"
 option_idx = 2
 
 [node name="Target2" parent="Targets" unique_id=238137283 instance=ExtResource("7_0amtr")]
 position = Vector2(368, -48)
+next_scene = "res://Scenes/Levels/Censorship2.tscn"
 option_idx = 3
 
 [node name="Target3" parent="Targets" unique_id=1959033691 instance=ExtResource("7_0amtr")]
 position = Vector2(816, 592)
+next_scene = "res://Scenes/Levels/Censorship2.tscn"
 
 [node name="Target4" parent="Targets" unique_id=479181864 instance=ExtResource("7_0amtr")]
 position = Vector2(-176, 976.00006)
+next_scene = "res://Scenes/Levels/Censorship2.tscnd"
 option_idx = 0
 
 [node name="Obstacles" type="Node2D" parent="." unique_id=1843141911]

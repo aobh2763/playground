@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://db5kw0weop30t"]
 
 [ext_resource type="PackedScene" uid="uid://bvg5dny32iw0x" path="res://Scenes/Player/Player.tscn" id="1_av6mt"]
+[ext_resource type="Script" uid="uid://bs84fyp7n1f58" path="res://Scenes/Levels/censorship.gd" id="1_qkr74"]
 [ext_resource type="FontFile" uid="uid://ci60w53hdbiqe" path="res://Art/Fonts/m3x6.ttf" id="2_xxggd"]
 [ext_resource type="Script" uid="uid://djeyrqj3himos" path="res://Scenes/Levels/time.gd" id="3_nocbf"]
 [ext_resource type="TileSet" uid="uid://b3n0bklwwny1b" path="res://Art/TileMap.tres" id="4_i3eny"]
@@ -13,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dxfyibmvpener" path="res://Scenes/Interactables/Target.tscn" id="10_3gsa0"]
 
 [node name="Censorship3" type="Node2D" unique_id=1551193459]
+script = ExtResource("1_qkr74")
 
 [node name="Player" parent="." unique_id=624977723 instance=ExtResource("1_av6mt")]
 z_index = 10
