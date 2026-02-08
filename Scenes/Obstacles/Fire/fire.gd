@@ -7,11 +7,14 @@ extends Area2D
 @onready var collision: CollisionShape2D = $CollisionShape2D
 @onready var timer: Timer = $Timer
 
-var active := false
+@export var active := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	set_off_state()
+	if active: 	
+		set_on_state()
+	else:
+		set_off_state()
 
 func set_off_state():
 	active = false
