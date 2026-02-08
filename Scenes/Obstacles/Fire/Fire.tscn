@@ -1,29 +1,39 @@
 [gd_scene format=3 uid="uid://cbecxpxb6rv3q"]
 
-[ext_resource type="Script" uid="uid://dd707gxaytf5k" path="res://Scenes/Interactables/spike.gd" id="1_wqaiy"]
-[ext_resource type="Texture2D" uid="uid://b0xs2ykkj72k7" path="res://Art/Sprites/spike_1.png" id="2_ecrbu"]
-[ext_resource type="Texture2D" uid="uid://b6pbcjcukyg1n" path="res://Art/Sprites/spike_2.png" id="3_e6xyb"]
+[ext_resource type="Script" uid="uid://c6tqa76xeji5x" path="res://Scenes/Obstacles/Fire/fire.gd" id="1_wqaiy"]
+[ext_resource type="Texture2D" uid="uid://3481scgvqfq6" path="res://Art/Sprites/Fire/fire_7.png" id="2_o65ml"]
+[ext_resource type="Texture2D" uid="uid://dmg035cal3ig8" path="res://Art/Sprites/Fire/fire_1.png" id="3_txeyg"]
+[ext_resource type="Texture2D" uid="uid://d22x2vqgucc7v" path="res://Art/Sprites/Fire/fire_2.png" id="4_3q7v2"]
+[ext_resource type="Texture2D" uid="uid://ggy010thhqq8" path="res://Art/Sprites/Fire/fire_3.png" id="5_mi5l8"]
+[ext_resource type="Texture2D" uid="uid://byi63aut4gfny" path="res://Art/Sprites/Fire/fire_4.png" id="6_0gc67"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5w7ky"]
+size = Vector2(20, 44)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e8nlx"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_ecrbu")
+"texture": ExtResource("2_o65ml")
 }],
 "loop": true,
 "name": &"off",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_ecrbu")
+"duration": 0.5,
+"texture": ExtResource("3_txeyg")
 }, {
-"duration": 1.0,
-"texture": ExtResource("3_e6xyb")
+"duration": 0.5,
+"texture": ExtResource("4_3q7v2")
+}, {
+"duration": 0.5,
+"texture": ExtResource("5_mi5l8")
+}, {
+"duration": 0.5,
+"texture": ExtResource("6_0gc67")
 }],
-"loop": false,
+"loop": true,
 "name": &"on",
 "speed": 5.0
 }]
@@ -32,13 +42,16 @@ animations = [{
 script = ExtResource("1_wqaiy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1568372083]
+position = Vector2(0, -8)
+scale = Vector2(1.5200002, 1.5200002)
 shape = SubResource("RectangleShape2D_5w7ky")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1367042570]
-position = Vector2(0, 0.5)
-scale = Vector2(0.2197802, 0.23076923)
+position = Vector2(0, -9.999998)
+scale = Vector2(1.3929943, 1.4626439)
 sprite_frames = SubResource("SpriteFrames_e8nlx")
-animation = &"on"
+animation = &"off"
+frame_progress = 0.8524837
 
 [node name="Timer" type="Timer" parent="." unique_id=2009714739]
 one_shot = true

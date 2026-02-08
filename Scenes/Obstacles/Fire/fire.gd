@@ -40,7 +40,7 @@ func _on_body_entered(body: Node2D) -> void:
 		print("not active")
 		return
 	if body.is_in_group("Player"):
-		body._take_damage(100)
+		body._die()
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("Player"):
