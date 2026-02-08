@@ -126,6 +126,9 @@ position = Vector2(688, -399)
 [node name="Key" parent="." unique_id=880983296 instance=ExtResource("7_alvx7")]
 position = Vector2(196, -357)
 
+[node name="Box" parent="." unique_id=1583327655 instance=ExtResource("11_81m86")]
+position = Vector2(208, 431)
+
 [node name="Enemies" type="Node" parent="." unique_id=1976986821]
 
 [node name="Enemy1" parent="Enemies" unique_id=1176994056 instance=ExtResource("8_k2h7d")]
@@ -146,6 +149,3 @@ speed = 0.0
 [node name="Enemy5" parent="Enemies" unique_id=1701756302 instance=ExtResource("8_k2h7d")]
 position = Vector2(680, -219)
 speed = 0.0
-
-[node name="RigidBody2D" parent="Enemies" unique_id=1583327655 instance=ExtResource("11_81m86")]
-position = Vector2(208, 431)
