@@ -1,0 +1,30 @@
+{
+    "canon": {
+        "count": 2,
+        "min_firerate": 180,
+        "max_firerate": 200
+    },
+    "mantle": {
+        "delay": 15,
+        "speed": 8
+    },
+    "spears": {
+        "count": 25,
+        "delay": 2,
+        "speed": 15
+    },
+    "candy": {
+        "count": 6,
+        "delay": 5,
+        "orange_chance": 80
+    },
+    "mint": {
+        "count": 2,
+        "delay": 12,
+        "chance": 30
+    },
+    "background": {
+        "color1": "#2d1810",
+        "color2": "#8b4513"
+    }
+}

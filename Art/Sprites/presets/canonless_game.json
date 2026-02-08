@@ -1,0 +1,26 @@
+{
+    "canon": null,
+    "mantle": {
+        "delay": 2,
+        "speed": 20
+    },
+    "spears": {
+        "count": 15,
+        "delay": 1,
+        "speed": 20
+    },
+    "candy": {
+        "count": 4,
+        "delay": 10,
+        "orange_chance": 20
+    },
+    "mint": {
+        "count": 1,
+        "delay": 15,
+        "chance": 0
+    },
+    "background": {
+        "color1": "#ff8a8a",
+        "color2": "#00ff04"
+    }
+}
