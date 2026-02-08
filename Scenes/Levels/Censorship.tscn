@@ -28,10 +28,10 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 0.5,
+"duration": 1.2,
 "texture": ExtResource("8_0iso3")
 }, {
-"duration": 1.0,
+"duration": 1.2,
 "texture": ExtResource("9_xql0x")
 }],
 "loop": true,
@@ -74,7 +74,6 @@ z_index = 2
 position = Vector2(0, 72)
 
 [node name="Time" type="Label" parent="Player" unique_id=732500712]
-visible = false
 offset_left = -372.0
 offset_top = 186.0
 offset_right = -65.0
@@ -118,8 +117,7 @@ script = ExtResource("3_6uucl")
 position = Vector2(-2.4814682, -8.000015)
 scale = Vector2(1.4074082, 1.7272738)
 sprite_frames = SubResource("SpriteFrames_0wk75")
-animation = &"walk"
-frame_progress = 0.502129
+animation = &"idle"
 
 [node name="Sprite2D" type="Sprite2D" parent="Enemies/Enemy1" unique_id=1523210054]
 visible = false

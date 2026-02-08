@@ -12,7 +12,7 @@ func _ready():
 	if (speed == 0):
 		animated_sprite_2d.play("idle")
 	else:
-		animated_sprite_2d.play("move")
+		animated_sprite_2d.play("walk")
 
 func _physics_process(delta):
 	# Move NPC
