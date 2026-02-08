@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://byi63aut4gfny" path="res://Art/Sprites/Fire/fire_4.png" id="6_0gc67"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5w7ky"]
-size = Vector2(20, 44)
+size = Vector2(20, 29.236841)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e8nlx"]
 animations = [{
@@ -42,7 +42,7 @@ animations = [{
 script = ExtResource("1_wqaiy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1568372083]
-position = Vector2(0, -8)
+position = Vector2(0, 3.2200022)
 scale = Vector2(1.5200002, 1.5200002)
 shape = SubResource("RectangleShape2D_5w7ky")
 
