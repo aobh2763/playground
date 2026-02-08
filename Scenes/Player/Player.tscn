@@ -494,6 +494,7 @@ health = 200
 hit_particles = NodePath("hit_particle_blood")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=1708800228]
+visible = false
 occluder = SubResource("OccluderPolygon2D_uky13")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1770914905]

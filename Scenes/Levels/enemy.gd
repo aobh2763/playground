@@ -2,12 +2,17 @@ extends CharacterBody2D
 
 @export var speed: float = 80.0
 var direction: Vector2 = Vector2.LEFT
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready():
 	# Make the NPC ignore the player
 	for player in get_tree().get_nodes_in_group("Player"):
 		add_collision_exception_with(player)
 		
+	if (speed == 0):
+		animated_sprite_2d.play("idle")
+	else:
+		animated_sprite_2d.play("move")
 
 func _physics_process(delta):
 	# Move NPC
@@ -20,7 +25,7 @@ func _physics_process(delta):
 			direction *= -1
 
 	# Flip sprite
-	$Sprite2D.flip_h = direction.x > 0
+	$AnimatedSprite2D.flip_h = direction.x > 0
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
