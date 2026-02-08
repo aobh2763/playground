@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://dxfyibmvpener"]
+
+[ext_resource type="Script" uid="uid://dco3cvdumelnj" path="res://Scenes/Core/goal.gd" id="1_cqcq0"]
+[ext_resource type="Texture2D" uid="uid://cbnjckflj8yhu" path="res://Art/Sprites/Target/target1.png" id="2_cajwm"]
+[ext_resource type="Texture2D" uid="uid://bykxq74vgomt" path="res://Art/Sprites/Target/target2.png" id="3_ibkru"]
+[ext_resource type="Texture2D" uid="uid://ckg8nw1m0864g" path="res://Art/Sprites/Target/target3.png" id="4_c3txh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0amtr"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_cajwm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ibkru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_c3txh")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8vl1y"]
+size = Vector2(16, 16)
+
+[node name="Target1" type="Area2D" unique_id=2074069215]
+z_index = 1
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_cqcq0")
+option_idx = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1983018832]
+sprite_frames = SubResource("SpriteFrames_0amtr")
+animation = &"idle"
+frame_progress = 0.4329081
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=784121703]
+shape = SubResource("RectangleShape2D_8vl1y")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

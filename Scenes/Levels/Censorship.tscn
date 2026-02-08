@@ -3,68 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://bvg5dny32iw0x" path="res://Scenes/Player/Player.tscn" id="1_r2ia7"]
 [ext_resource type="Script" uid="uid://bs84fyp7n1f58" path="res://Scenes/Levels/censorship.gd" id="1_srbmp"]
 [ext_resource type="TileSet" uid="uid://b3n0bklwwny1b" path="res://Art/TileMap.tres" id="2_7btwn"]
-[ext_resource type="Script" uid="uid://cdfpeioapbv6n" path="res://Scenes/Levels/enemy.gd" id="3_6uucl"]
 [ext_resource type="FontFile" uid="uid://ci60w53hdbiqe" path="res://Art/Fonts/m3x6.ttf" id="3_8vl1y"]
 [ext_resource type="Script" uid="uid://djeyrqj3himos" path="res://Scenes/Levels/time.gd" id="4_3wl1e"]
-[ext_resource type="Texture2D" uid="uid://e1qx1oeab31" path="res://Art/Icons/icon.svg" id="4_xfaf5"]
-[ext_resource type="Script" uid="uid://bnyc8j0x5v2q3" path="res://Scenes/Levels/target.gd" id="5_hlytw"]
-[ext_resource type="Texture2D" uid="uid://cbnjckflj8yhu" path="res://Art/Sprites/Target/target1.png" id="5_sem85"]
-[ext_resource type="Texture2D" uid="uid://bykxq74vgomt" path="res://Art/Sprites/Target/target2.png" id="6_hlytw"]
-[ext_resource type="Texture2D" uid="uid://ckg8nw1m0864g" path="res://Art/Sprites/Target/target3.png" id="7_srbmp"]
-[ext_resource type="Texture2D" uid="uid://bk36gru4j21yf" path="res://Art/Sprites/Enemy/idle.png" id="7_vl6nf"]
-[ext_resource type="Texture2D" uid="uid://bf6671vtat7h3" path="res://Art/Sprites/Enemy/walk1.png" id="8_0iso3"]
-[ext_resource type="Texture2D" uid="uid://bspd8pc5l3h8u" path="res://Art/Sprites/Enemy/walk2.png" id="9_xql0x"]
+[ext_resource type="PackedScene" uid="uid://paqqegdf2isf" path="res://Scenes/Obstacles/Enemy/enemy.tscn" id="6_3wl1e"]
+[ext_resource type="PackedScene" uid="uid://dxfyibmvpener" path="res://Scenes/Interactables/Target.tscn" id="7_0amtr"]
 [ext_resource type="PackedScene" uid="uid://cx4hoxn2lm2aa" path="res://Scenes/Obstacles/Spikes/Spikes.tscn" id="10_0amtr"]
 [ext_resource type="PackedScene" uid="uid://csg386ay7ldng" path="res://Scenes/Obstacles/Surveillance_Camera/Surveillance_Camera.tscn" id="13_bbeuo"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_0wk75"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("7_vl6nf")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.2,
-"texture": ExtResource("8_0iso3")
-}, {
-"duration": 1.2,
-"texture": ExtResource("9_xql0x")
-}],
-"loop": true,
-"name": &"walk",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0rowy"]
-size = Vector2(28, 28)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6uucl"]
-size = Vector2(30, 26)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_0amtr"]
-resource_local_to_scene = true
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_sem85")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_hlytw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_srbmp")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8vl1y"]
-size = Vector2(16, 16)
+[ext_resource type="PackedScene" uid="uid://d048fbb80fujh" path="res://Scenes/Core/Prompt.tscn" id="13_vl6nf"]
 
 [node name="Censorship" type="Node2D" unique_id=389194491]
 script = ExtResource("1_srbmp")
@@ -109,91 +54,25 @@ collision_enabled = false
 
 [node name="Enemies" type="Node2D" parent="." unique_id=1223324408]
 
-[node name="Enemy1" type="CharacterBody2D" parent="Enemies" unique_id=462913190]
+[node name="Enemy1" parent="Enemies" unique_id=1176994056 instance=ExtResource("6_3wl1e")]
 position = Vector2(-176, 368)
-script = ExtResource("3_6uucl")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemies/Enemy1" unique_id=88626719]
-position = Vector2(-2.4814682, -8.000015)
-scale = Vector2(1.4074082, 1.7272738)
-sprite_frames = SubResource("SpriteFrames_0wk75")
-animation = &"idle"
+[node name="Enemy2" parent="Enemies" unique_id=1324432511 instance=ExtResource("6_3wl1e")]
+position = Vector2(-240, 568)
 
-[node name="Sprite2D" type="Sprite2D" parent="Enemies/Enemy1" unique_id=1523210054]
-visible = false
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("4_xfaf5")
+[node name="Enemy3" parent="Enemies" unique_id=688911502 instance=ExtResource("6_3wl1e")]
+position = Vector2(-112, 760)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy1" unique_id=1626644068]
-light_mask = 0
-visibility_layer = 0
-shape = SubResource("RectangleShape2D_0rowy")
-
-[node name="Area2D" type="Area2D" parent="Enemies/Enemy1" unique_id=180036427]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy1/Area2D" unique_id=1303010027]
-position = Vector2(0, -5)
-shape = SubResource("RectangleShape2D_6uucl")
+[node name="Enemy4" parent="Enemies" unique_id=794346732 instance=ExtResource("6_3wl1e")]
+position = Vector2(-48, -56)
+speed = 0.0
 
 [node name="Targets" type="Node2D" parent="." unique_id=1738205753]
 
-[node name="Target1" type="Area2D" parent="Targets" unique_id=747148828]
-z_index = 1
+[node name="Target1" parent="Targets" unique_id=2074069215 instance=ExtResource("7_0amtr")]
 position = Vector2(-464, -80)
-scale = Vector2(1.5, 1.5)
-script = ExtResource("5_hlytw")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Targets/Target1" unique_id=1268405711]
-sprite_frames = SubResource("SpriteFrames_0amtr")
-animation = &"idle"
-frame_progress = 0.4329081
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Targets/Target1" unique_id=1710727996]
-shape = SubResource("RectangleShape2D_8vl1y")
-
-[node name="Target2" type="Area2D" parent="Targets" unique_id=2072413712]
-z_index = 1
-position = Vector2(368, -48)
-scale = Vector2(1.5, 1.5)
-script = ExtResource("5_hlytw")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Targets/Target2" unique_id=1222497780]
-sprite_frames = SubResource("SpriteFrames_0amtr")
-animation = &"idle"
-frame_progress = 0.26860827
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Targets/Target2" unique_id=327301354]
-shape = SubResource("RectangleShape2D_8vl1y")
-
-[node name="Target3" type="Area2D" parent="Targets" unique_id=1695407471]
-z_index = 1
-position = Vector2(-176, 976.00006)
-scale = Vector2(1.5, 1.5)
-script = ExtResource("5_hlytw")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Targets/Target3" unique_id=639565819]
-sprite_frames = SubResource("SpriteFrames_0amtr")
-animation = &"idle"
-frame_progress = 0.26860827
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Targets/Target3" unique_id=1334411617]
-shape = SubResource("RectangleShape2D_8vl1y")
-
-[node name="Target4" type="Area2D" parent="Targets" unique_id=644303893]
-z_index = 1
-position = Vector2(816, 496.00003)
-scale = Vector2(1.5, 1.5)
-script = ExtResource("5_hlytw")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Targets/Target4" unique_id=1449794387]
-position = Vector2(0, 64)
-sprite_frames = SubResource("SpriteFrames_0amtr")
-animation = &"idle"
-frame_progress = 0.26860827
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Targets/Target4" unique_id=1711560233]
-position = Vector2(0, 64)
-shape = SubResource("RectangleShape2D_8vl1y")
+[node name="Target2" parent="Targets" unique_id=238137283 instance=ExtResource("7_0amtr")]
 
 [node name="Obstacles" type="Node2D" parent="." unique_id=1843141911]
 
@@ -230,10 +109,32 @@ rotation = 1.3456489
 start_angle = 180
 end_angle = 80
 direction = -1
+duration = 3.0
 
 [node name="Camera2" parent="Obstacles" unique_id=861246321 instance=ExtResource("13_bbeuo")]
 position = Vector2(327.99997, 642.0001)
 rotation = -1.5658815
 start_angle = -100
+duration = 3.0
 
-[connection signal="body_entered" from="Enemies/Enemy1/Area2D" to="Enemies/Enemy1" method="_on_area_2d_body_entered"]
+[node name="Camera3" parent="Obstacles" unique_id=1225820887 instance=ExtResource("13_bbeuo")]
+position = Vector2(-73.000046, 290.00006)
+rotation = -2.8188233
+start_angle = -240
+end_angle = -160
+
+[node name="Camera4" parent="Obstacles" unique_id=1614433560 instance=ExtResource("13_bbeuo")]
+position = Vector2(-273.00006, 466.00006)
+rotation = 1.3018135
+start_angle = -90
+end_angle = 70
+direction = -1
+duration = 2.4
+
+[node name="Camera5" parent="Obstacles" unique_id=1842963882 instance=ExtResource("13_bbeuo")]
+position = Vector2(-73.00006, 786)
+rotation = 1.9617653
+start_angle = 246
+end_angle = 112
+
+[node name="Prompt_layer" parent="." unique_id=2027810698 instance=ExtResource("13_vl6nf")]

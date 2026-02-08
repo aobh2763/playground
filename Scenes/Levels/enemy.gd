@@ -19,6 +19,9 @@ func _physics_process(delta):
 	var collision = move_and_collide(direction * speed * delta)
 	
 	# Reverse direction if we hit a wall
+	if speed == 0:
+		return
+	
 	if collision:
 		var collider = collision.get_collider()
 		if collider.is_in_group("Wall"):

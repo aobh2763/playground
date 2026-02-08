@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://bqfkvsqibvo4k"]
 
-[ext_resource type="Script" uid="uid://c87vbu8c6ojni" path="res://Scenes/Interactables/goal.gd" id="1_urb3n"]
+[ext_resource type="Script" uid="uid://dco3cvdumelnj" path="res://Scenes/Core/goal.gd" id="1_urb3n"]
 [ext_resource type="Texture2D" uid="uid://bw36ig60cpuaq" path="res://Art/Sprites/Square.png" id="2_0hvei"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_op5m6"]
 

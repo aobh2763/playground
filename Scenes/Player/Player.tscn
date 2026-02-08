@@ -444,11 +444,11 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_wo7cn"]
 resource_name = "Walk"
-length = 0.4
+length = 3.0333333
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("AnimatedSprite2D:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
@@ -465,10 +465,10 @@ tracks/1/path = NodePath("AnimatedSprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [0, 0, 0, 0, 0, 0]
+"values": [0, 0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gtuut"]
@@ -502,7 +502,7 @@ texture_filter = 1
 position = Vector2(1, 0)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_vax36")
-animation = &"Idle"
+animation = &"Walk"
 
 [node name="HitParticles" parent="AnimatedSprite2D" unique_id=514312959 instance=ExtResource("21_gooki")]
 position = Vector2(15, 5)
