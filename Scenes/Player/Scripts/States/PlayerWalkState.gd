@@ -12,7 +12,7 @@ var player : CharacterBody2D
 
 func Enter():
 	player = get_tree().get_first_node_in_group("Player")
-	animator.play("Walk")
+	animator.play("WalkForwards")
 
 func Update(delta : float):
 	var input_dir = Input.get_vector("MoveLeft", "MoveRight", "MoveUp", "MoveDown").normalized()
@@ -26,16 +26,37 @@ func Update(delta : float):
 		Transition("Attacking")
 	
 func Move(input_dir : Vector2):
-	#Suddenly turning mid dash
-	if(dash_direction != Vector2.ZERO and dash_direction != input_dir):
+	# Cancel dash if input changes mid-dash
+	if dash_direction != Vector2.ZERO and dash_direction != input_dir:
 		dash_direction = Vector2.ZERO
 		dashspeed = 0
 
+	# Get sprite node
+	var sprite = player.get_node("AnimatedSprite2D")  # or Sprite2D
+
+	# Handle left/right flipping
+	if input_dir.x > 0:
+		sprite.flip_h = false
+	elif input_dir.x < 0:
+		sprite.flip_h = true
+
+	# Determine animation based on movement direction
+	if input_dir.length() > 0:
+		if abs(input_dir.x) > abs(input_dir.y):
+			# Moving mostly horizontally
+			if animator.current_animation != "Walk":
+				animator.play("Walk")
+		else:
+			# Moving mostly vertically
+			if animator.current_animation != "WalkForwards":
+				animator.play("WalkForwards")
+	else:
+		# No input → go to idle
+		Transition("Idle")
+
+	# Apply movement
 	player.velocity = input_dir * movespeed + dash_direction * dashspeed 
 	player.move_and_slide()
-
-	if(input_dir.length() <= 0):
-		Transition("Idle")
 
 func start_dash(input_dir : Vector2):
 	AudioManager.play_sound(AudioManager.PLAYER_ATTACK_SWING, 0.3, -1)
@@ -60,7 +81,7 @@ func LessenDash(delta : float):
 		
 	if(animator.current_animation == "Dash"):
 		await animator.animation_finished
-		animator.play("Walk")
+		animator.play("WalkForwards")
 
 #We cannot allow a transition before the dash is complete and the animation has stopped playing
 func Transition(newstate : String):

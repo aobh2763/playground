@@ -5,7 +5,7 @@
 [ext_resource type="TileSet" uid="uid://b3n0bklwwny1b" path="res://Art/TileMap.tres" id="2_7btwn"]
 [ext_resource type="FontFile" uid="uid://ci60w53hdbiqe" path="res://Art/Fonts/m3x6.ttf" id="3_8vl1y"]
 [ext_resource type="Script" uid="uid://djeyrqj3himos" path="res://Scenes/Levels/time.gd" id="4_3wl1e"]
-[ext_resource type="PackedScene" uid="uid://paqqegdf2isf" path="res://Scenes/Obstacles/Enemy/enemy.tscn" id="6_3wl1e"]
+[ext_resource type="PackedScene" uid="uid://paqqegdf2isf" path="res://Scenes/Obstacles/Enemy/Enemy.tscn" id="6_3wl1e"]
 [ext_resource type="PackedScene" uid="uid://dxfyibmvpener" path="res://Scenes/Interactables/Target.tscn" id="7_0amtr"]
 [ext_resource type="PackedScene" uid="uid://cx4hoxn2lm2aa" path="res://Scenes/Obstacles/Spikes/Spikes.tscn" id="10_0amtr"]
 [ext_resource type="PackedScene" uid="uid://csg386ay7ldng" path="res://Scenes/Obstacles/Surveillance_Camera/Surveillance_Camera.tscn" id="13_bbeuo"]
@@ -71,8 +71,18 @@ speed = 0.0
 
 [node name="Target1" parent="Targets" unique_id=2074069215 instance=ExtResource("7_0amtr")]
 position = Vector2(-464, -80)
+option_idx = 2
 
 [node name="Target2" parent="Targets" unique_id=238137283 instance=ExtResource("7_0amtr")]
+position = Vector2(368, -48)
+option_idx = 3
+
+[node name="Target3" parent="Targets" unique_id=1959033691 instance=ExtResource("7_0amtr")]
+position = Vector2(816, 592)
+
+[node name="Target4" parent="Targets" unique_id=479181864 instance=ExtResource("7_0amtr")]
+position = Vector2(-176, 976.00006)
+option_idx = 0
 
 [node name="Obstacles" type="Node2D" parent="." unique_id=1843141911]
 

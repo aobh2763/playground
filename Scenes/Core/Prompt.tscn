@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d048fbb80fujh"]
 
 [ext_resource type="Script" uid="uid://dhufd55sd1ih3" path="res://Scenes/Core/prompt.gd" id="1_7hdso"]
+[ext_resource type="FontFile" uid="uid://ci60w53hdbiqe" path="res://Art/Fonts/m3x6.ttf" id="2_gemq4"]
 
 [node name="Prompt_layer" type="CanvasLayer" unique_id=2027810698]
 layer = 2
@@ -20,9 +21,11 @@ options = Array[Array]([["promotes", "reshapes", "restrics", "suppresses"], ["ch
 [node name="Label" type="Label" parent="GameUI" unique_id=28532369]
 layout_mode = 0
 offset_left = 70.0
-offset_top = 16.0
+offset_top = 8.0
 offset_right = 573.0
-offset_bottom = 41.0
+offset_bottom = 34.0
+theme_override_fonts/font = ExtResource("2_gemq4")
+theme_override_font_sizes/font_size = 32
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
