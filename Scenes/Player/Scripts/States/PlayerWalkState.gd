@@ -56,8 +56,14 @@ func Move(input_dir : Vector2):
 
 	# Apply movement
 	player.velocity = input_dir * movespeed + dash_direction * dashspeed 
-	player.move_and_slide()
-
+	
+	if player.move_and_slide():
+		var collision := player.get_slide_collision(0)
+		var body := collision.get_collider() as RigidBody2D
+		if body:
+			body.apply_central_impulse(
+				-collision.get_normal() * 20.0
+			)
 func start_dash(input_dir : Vector2):
 	AudioManager.play_sound(AudioManager.PLAYER_ATTACK_SWING, 0.3, -1)
 	dash_direction = input_dir.normalized()
