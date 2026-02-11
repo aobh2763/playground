@@ -1,0 +1,178 @@
+[gd_scene format=3 uid="uid://dllfw7qkf8fs6"]
+
+[ext_resource type="FontFile" uid="uid://ci60w53hdbiqe" path="res://Art/Fonts/m3x6.ttf" id="1_5ftdy"]
+[ext_resource type="Script" uid="uid://dohhvo04kbpa7" path="res://Scenes/Levels/intro.gd" id="1_eue8q"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=2085909962]
+
+[node name="TitleScreen" type="Control" parent="." unique_id=1048294155 node_paths=PackedStringArray("next_scene")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_eue8q")
+next_scene = NodePath("../Lore")
+
+[node name="CenterContainer" type="CenterContainer" parent="TitleScreen" unique_id=2024794241]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 297.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TitleScreen/CenterContainer" unique_id=1140114366]
+layout_mode = 2
+
+[node name="Title1" type="Label" parent="TitleScreen/CenterContainer/VBoxContainer" unique_id=2098504392]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_5ftdy")
+theme_override_font_sizes/font_size = 82
+text = "IF YOU CAN'T BEAT THEM"
+
+[node name="Title2" type="Label" parent="TitleScreen/CenterContainer/VBoxContainer" unique_id=1057374736]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_5ftdy")
+theme_override_font_sizes/font_size = 82
+text = "JOIN THEM"
+horizontal_alignment = 2
+
+[node name="SubTitle1" type="Label" parent="TitleScreen/CenterContainer/VBoxContainer" unique_id=839896057]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_5ftdy")
+theme_override_font_sizes/font_size = 48
+text = "A game made during 
+the Playground 2.0 game jam."
+
+[node name="Lore" type="Control" parent="." unique_id=1427597996 node_paths=PackedStringArray("next_scene", "before_scene")]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_eue8q")
+next_scene = NodePath("../Concept")
+before_scene = NodePath("../TitleScreen")
+
+[node name="CenterContainer" type="CenterContainer" parent="Lore" unique_id=720029440]
+layout_mode = 0
+offset_right = 641.0
+offset_bottom = 280.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Lore/CenterContainer" unique_id=1357941217]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Lore/CenterContainer/VBoxContainer" unique_id=1209164050]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_5ftdy")
+theme_override_font_sizes/font_size = 42
+text = "The theme for this year's edition was"
+
+[node name="Label2" type="Label" parent="Lore/CenterContainer/VBoxContainer" unique_id=593057498]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_5ftdy")
+theme_override_font_sizes/font_size = 128
+text = "AI ERA"
+
+[node name="Controls" type="Control" parent="." unique_id=265626107]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_eue8q")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Controls" unique_id=111197501]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 325.0
+offset_right = 637.0
+offset_bottom = 348.0
+alignment = 1
+
+[node name="Next" type="Label" parent="Controls/HBoxContainer" unique_id=641573743]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_5ftdy")
+theme_override_font_sizes/font_size = 36
+text = "(N)ext"
+
+[node name="Back" type="Label" parent="Controls/HBoxContainer" unique_id=2019527002]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_5ftdy")
+theme_override_font_sizes/font_size = 36
+text = "(B)ack"
+
+[node name="Skip" type="Label" parent="Controls/HBoxContainer" unique_id=1788469655]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_5ftdy")
+theme_override_font_sizes/font_size = 36
+text = "(S)kip"
+
+[node name="Concept" type="Control" parent="." unique_id=301544278 node_paths=PackedStringArray("next_scene", "before_scene")]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_eue8q")
+next_scene = NodePath("../GameplayLoop")
+before_scene = NodePath("../Lore")
+
+[node name="CenterContainer" type="CenterContainer" parent="Concept" unique_id=1598475987]
+layout_mode = 0
+offset_right = 753.0
+offset_bottom = 361.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Concept/CenterContainer" unique_id=1226483020]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Concept/CenterContainer/VBoxContainer" unique_id=952401125]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_5ftdy")
+theme_override_font_sizes/font_size = 48
+text = "We tried to imagine"
+
+[node name="Label2" type="Label" parent="Concept/CenterContainer/VBoxContainer" unique_id=1805599566]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_5ftdy")
+theme_override_font_sizes/font_size = 48
+text = "In the ERA when AI outgrows the need 
+for human guidance, no longer leaning on 
+the hands that once shaped it."
+
+[node name="Label3" type="Label" parent="Concept/CenterContainer/VBoxContainer" unique_id=970521215]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_5ftdy")
+theme_override_font_sizes/font_size = 48
+text = "What will humans do?"
+
+[node name="GameplayLoop" type="Control" parent="." unique_id=296800642 node_paths=PackedStringArray("before_scene")]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_eue8q")
+before_scene = NodePath("../Concept")
+
+[node name="CenterContainer" type="CenterContainer" parent="GameplayLoop" unique_id=1777916322]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameplayLoop/CenterContainer" unique_id=671946444]
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="GameplayLoop/CenterContainer/VBoxContainer" unique_id=20223726]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_5ftdy")
+theme_override_font_sizes/font_size = 42
+text = "Well IF YOU CAN'T BEAT THEM, then JOIN THEM"
+
+[node name="Label7" type="Label" parent="GameplayLoop/CenterContainer/VBoxContainer" unique_id=1106876079]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_5ftdy")
+theme_override_font_sizes/font_size = 42
+text = "in our game, you play as LLuMie
+An LLM system actively receiving queries from its environement 
+and needing to deliver high quality responses as fast as possible.
+In each level, you will receive an uncomplete response 
+Your task is to fill the blanks in the response with the 
+words that optimize both the response time 
+and the response quality"

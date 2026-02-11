@@ -252,9 +252,14 @@ active = true
 
 [node name="Target1" parent="Targets" unique_id=2074069215 instance=ExtResource("10_3gsa0")]
 position = Vector2(-337, -335)
+next_scene = "res://Scenes/Levels/WInScreen.tscn"
+option_idx = 0
 
 [node name="Target2" parent="Targets" unique_id=1961438198 instance=ExtResource("10_3gsa0")]
 position = Vector2(272, 13)
+next_scene = "res://Scenes/Levels/WInScreen.tscn"
 
 [node name="Target3" parent="Targets" unique_id=1530227693 instance=ExtResource("10_3gsa0")]
 position = Vector2(-302, 495)
+next_scene = "res://Scenes/Levels/WInScreen.tscn"
+option_idx = 2
