@@ -22,6 +22,7 @@ func _on_body_entered(body: Node2D) -> void:
 		print("player entered")
 		var ui := get_tree().get_first_node_in_group("PromptUI")
 		if ui:
+			print("thise entered")
 			ui.fill(option_idx)
 			start_new_scene(next_scene)
 			timer.stop_timer()
@@ -29,4 +30,4 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("Player"):
-		print("player entered")
+		print("player exited")

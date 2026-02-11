@@ -252,9 +252,11 @@ active = true
 
 [node name="Target1" parent="Targets" unique_id=2074069215 instance=ExtResource("10_3gsa0")]
 position = Vector2(-337, -335)
+option_idx = 3
 
 [node name="Target2" parent="Targets" unique_id=1961438198 instance=ExtResource("10_3gsa0")]
 position = Vector2(272, 13)
 
 [node name="Target3" parent="Targets" unique_id=1530227693 instance=ExtResource("10_3gsa0")]
 position = Vector2(-302, 495)
+option_idx = 2

@@ -197,3 +197,4 @@ next_scene = "res://Scenes/Levels/Censorship3.tscn"
 [node name="Target4" parent="Target" unique_id=650842428 instance=ExtResource("13_ie6ou")]
 position = Vector2(-208, 656)
 next_scene = "res://Scenes/Levels/Censorship3.tscn"
+option_idx = 0
